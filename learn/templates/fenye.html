@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>fenye</title>
+    <style>
+        body{
+            font-size: .85em;
+            font-family: "微软雅黑 Light";
+            color: #232323;
+            background-color: #fff;
+            text-align:center;
+        }
+        .wrap{
+            margin:0 auto;
+            width: 250px;
+            height: auto;
+        }
+        #Pageing A{
+            background-color: #EE5C42;
+            border:1px solid white;
+            text-decoration:none;color:white;
+            padding:.1em .6em .2em .6em;
+        }
+        #Pageing A.selected{
+            background-color: #7FFF00;
+        }
+        table.gridtable {
+            font-family: verdana,arial,sans-serif;
+            font-size:11px;
+            color:#333333;
+            border-width: 1px;
+            border-color: #666666;
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+        table.gridtable th {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #dedede;
+        }
+        table.gridtable td {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <h1>主机信息</h1>
+    <table class="gridtable">
+    <tr>
+        <th>主机名</th><th>IP</th>
+    </tr>
+    {% for item in data %}
+        <tr>
+            <td>{{ item.HostName }}</td>
+            <td>{{ item.Ip }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+    <div> 第{{ yema }}页,共{{ zong}}页总条数:{{ cont}}</div>
+    <div id="Pageing">
+        {{ ht }}
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>ajax</title>
+</head>
+<body>
+    <input id="na" type="text" />
+    <input type="button" value="点击执行" onclick="DoAjax();" />
+
+
+    <script type="text/javascript" src="/static/jquery-1.12.2.js"></script>
+    <script type="text/javascript">
+            function DoAjax(){
+                var temp = $('#na').val();
+                $.ajax({
+                    url:'/ajax/',
+                    type:'POST',
+                    data:{dat:temp},
+                    success:function(arg){
+                        var obj= jQuery.parseJSON(arg);
+                        console.log(obj.status);
+                        console.log(obj.msg);
+                        console.log('success');
+                        console.log(obj.data);
+                        $('#na').val(obj.msg);
+                    },
+                    error:function(){
+                        console.log('failed')
+                    }
+                });
+            }
+    </script>
+</body>
+</html>
