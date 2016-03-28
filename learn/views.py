@@ -104,7 +104,8 @@ def ajax(request):
 
 
 def fenye(request,page):
-    tianshu = 20
+    tianshu=comm.zhanint(request.COOKIES.get('pager_num',10),10)
+    #tianshu = 20
     page=comm.zhanint(page,1)
     result = Host.objects.all()[(int(page)-1)*tianshu:int(page)*tianshu]
     coun = Host.objects.all().count()
@@ -119,4 +120,6 @@ def fenye(request,page):
         fen=html_fenye.html_fenye(page,zong)
     else:
         fen=html_fenye.html_fenye(page,zong)
-    return render_to_response('fenye.html',{'data':result,'cont':coun,'yema':page,'zong':zong,'ht':fen})
+    hehe = render_to_response('fenye.html',{'data':result,'cont':coun,'yema':page,'zong':zong,'ht':fen})
+    hehe.set_cookie('pager_num',tianshu)
+    return hehe

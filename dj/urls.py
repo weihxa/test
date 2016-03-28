@@ -1,6 +1,7 @@
 from django.conf.urls import include, url
 from django.contrib import admin
 from learn import views as learn_views
+from session import views as session_views
 urlpatterns = [
     # Examples:
     # url(r'^$', 'dj.views.home', name='home'),
@@ -17,4 +18,7 @@ urlpatterns = [
     url(r'^regiter/$',learn_views.register),
     url(r'^ajax/$',learn_views.ajax),
     url(r'^fenye/(\d*)',learn_views.fenye),
+    url(r'^sess/login/',session_views.login),
+    url(r'^sess/index/',session_views.index),
+    url(r'^sess/logout/',session_views.logout),
 ]
