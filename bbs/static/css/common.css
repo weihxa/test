@@ -1,0 +1,71 @@
+body{
+    margin: auto;
+}
+html {
+    font-family: "微软雅黑 Light";
+}
+.pg-header{
+    height: 44px;
+    background-color: #2459a2;
+    margin: 0 auto;
+}
+.header-menu{
+    float:left;
+    margin-left: 20px;
+
+}
+.digg-logo{
+    width: 121px;
+    height: 23px;
+    background: url("/static/images/logo.png") no-repeat 0 0;
+    float: left;
+    margin-top: 11px;
+}
+a {
+    text-decoration: none;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, a, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td {
+    margin: 0;
+    padding: 0;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+.header-menu a.tb {
+    color: #c0cddf;
+    margin-left: -3px;
+    padding: 0 13px 0 16px;
+    display: inline-block;
+    line-height: 44px;
+}
+a.tb:hover{
+    color: #fff;
+    background-color: #204982;
+}
+a.acctive{
+    color: #fff;
+    background-color: #204982;
+}
+.pg-body{
+    width: 960px;
+    margin: 0 auto;
+    overflow: hidden;
+    height: auto !important;
+    min-height: 713px;
+    padding: 6px 28px 60px;
+    background-color: #F3F0F0;
+}
+.content-list {
+    position: relative;
+}
+.content-list .item {
+    clear: both;
+    padding-top: 10px;
+    border-bottom: 1px solid #dce7f4;
+    overflow: hidden;
+    position: relative;
+    _zoom: 1;
+}
