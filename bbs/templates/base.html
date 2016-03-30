@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+    <link rel="shortcut icon" href="/static/images/ico_04_1.jpg" type="image/x-icon">
+<meta charset="utf-8">
+<title>{% block titel %}魏昊晅个人博客{% endblock %}</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="/static/css/base.css" rel="stylesheet">
+<link href="/static/css/index.css" rel="stylesheet">
+<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+<script type="text/javascript" src="/static/js/sliders.js"></script>
+<style type="text/css">
+        .xianshi{
+            display: block;
+        }
+    </style>
+<!--[if lt IE 9]>
+<script src="/static/js/modernizr.js"></script>
+<![endif]-->
+<!-- 返回顶部调用 begin -->
+<script type="text/javascript" src="/static/js/up/jquery.js"></script>
+<script type="text/javascript" src="/static/js/up/js.js"></script>
+<!-- 返回顶部调用 end-->
+</head>
+<body>
+<header>
+  <!--<div class="logo f_l"> <a href="/"><img src="images/logo.png"></a> </div>-->
+  <nav id="topnav" class="f_r">
+    <ul>
+      <a href="/index/">首页</a> <a href="/article/" >文章分享</a> <a href="p.html" >django学习</a> <a href="a.html" >最新发布</a> <a href="c.html" >相册</a> <a href="b.html" >留言</a>
+    </ul>
+    <script src="/static/js/nav.js"></script>
+  </nav>
+</header>
+<article>
+    {% block bokezhengwen %}{% endblock %}
+</article>
+<footer>
+  <p class="ft-copyright">魏昊晅的个人博客 Design by DanceSmile</p>
+  <div id="tbox"><a id="gotop" class="" href="javascript:void(0)"></a> </div>
+  <script>
+	$(function(){
+    $('#gotop').click(function(){
+        $(window).scrollTop(0);
+    })
+});
+$(window).scroll( function() {
+    var height = $(window).scrollTop();
+    if(height>0){
+		$('#gotop').addClass('xianshi');
+        
+    }else{
+        $('#gotop').removeClass('xianshi');
+    }
+});
+  </script>
+</footer>
+</body>
+</html>

@@ -8,4 +8,5 @@ urlpatterns = [
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^index/', dj_bbs_views.index),
+    url(r'^article/', dj_bbs_views.article),
 ]

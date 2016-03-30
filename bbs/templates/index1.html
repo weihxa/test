@@ -1,6 +1,40 @@
-{% extends 'base.html' %}
-{% block bokezhengwen %}
-    <div class="l_box f_l">
+<!doctype html>
+<html>
+<head>
+    <link rel="shortcut icon" href="/static/images/ico_04_1.jpg" type="image/x-icon">
+<meta charset="utf-8">
+<title>魏昊晅个人博客</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="/static/css/base.css" rel="stylesheet">
+<link href="/static/css/index.css" rel="stylesheet">
+<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+<script type="text/javascript" src="/static/js/sliders.js"></script>
+<style type="text/css">
+        .xianshi{
+            display: block;
+        }
+    </style>
+<!--[if lt IE 9]>
+<script src="/static/js/modernizr.js"></script>
+<![endif]-->
+<!-- 返回顶部调用 begin -->
+<script type="text/javascript" src="/static/js/up/jquery.js"></script>
+<script type="text/javascript" src="/static/js/up/js.js"></script>
+<!-- 返回顶部调用 end-->
+</head>
+<body>
+<header>
+  <!--<div class="logo f_l"> <a href="/"><img src="images/logo.png"></a> </div>-->
+  <nav id="topnav" class="f_r">
+    <ul>
+      <a href="index1.html" target="_blank">首页</a> <a href="news.html" target="_blank">文章分享</a> <a href="p.html" target="_blank">django学习</a> <a href="a.html" target="_blank">心情</a> <a href="c.html" target="_blank">相册</a> <a href="b.html" target="_blank">留言</a>
+    </ul>
+    <script src="/static/js/nav.js"></script>
+  </nav>
+</header>
+<article>
+  <div class="l_box f_l">
     <div class="banner">
       <div id="slide-holder">
         <div id="slide-runner"> <a href="/" target="_blank"><img id="slide-img-1" src="/static/images/a1.jpg"  alt="" /></a> <a href="/" target="_blank"><img id="slide-img-2" src="/static/images/a2.jpg"  alt="" /></a> <a href="/" target="_blank"><img id="slide-img-3" src="/static/images/a3.jpg"  alt="" /></a> <a href="/" target="_blank"><img id="slide-img-4" src="/static/images/a4.jpg"  alt="" /></a>
@@ -36,10 +70,10 @@
         "id":"slide-img-4",
         "client":"标题4",
         "desc":"add your description here"
-    }
+    } 
 	];
 
-	  </script>
+	  </script> 
     </div>
     <!-- banner代码 结束 -->
     <div class="topnews">
@@ -103,4 +137,26 @@
     </div>
   </div>
 
-{% endblock %}
+</article>
+<footer>
+  <p class="ft-copyright">魏昊晅的个人博客 Design by DanceSmile</p>
+  <div id="tbox"><a id="gotop" class="" href="javascript:void(0)"></a> </div>
+  <script>
+	$(function(){
+    $('#gotop').click(function(){
+        $(window).scrollTop(0);
+    })
+});
+$(window).scroll( function() {
+    var height = $(window).scrollTop();
+    if(height>0){
+		$('#gotop').addClass('xianshi');
+        
+    }else{
+        $('#gotop').removeClass('xianshi');
+    }
+});
+  </script>
+</footer>
+</body>
+</html>

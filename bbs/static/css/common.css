@@ -1,5 +1,6 @@
 body{
-    margin: auto;
+    text-align:center;
+    margin:0;
 }
 html {
     font-family: "微软雅黑 Light";
@@ -8,6 +9,7 @@ html {
     height: 44px;
     background-color: #2459a2;
     margin: 0 auto;
+    text-align:center;
 }
 .header-menu{
     float:left;
@@ -28,12 +30,7 @@ a {
     margin: 0;
     padding: 0;
 }
-body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, a, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td {
-    margin: 0;
-    padding: 0;
-    word-wrap: break-word;
-    word-break: break-all;
-}
+
 .header-menu a.tb {
     color: #c0cddf;
     margin-left: -3px;
@@ -68,4 +65,13 @@ a.acctive{
     overflow: hidden;
     position: relative;
     _zoom: 1;
+}
+.pg-footer{
+    padding-top: 15px;
+    text-align: center;
+    border-top: 1px solid #ccdcef;
+    position: relative;
+}
+div {
+    display: block;
 }
