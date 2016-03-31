@@ -15,6 +15,7 @@
             display: block;
         }
     </style>
+{% block style %}{% endblock %}
 <!--[if lt IE 9]>
 <script src="/static/js/modernizr.js"></script>
 <![endif]-->
@@ -54,7 +55,9 @@ $(window).scroll( function() {
         $('#gotop').removeClass('xianshi');
     }
 });
+
   </script>
+    {% block js %}{% endblock %}
 </footer>
 </body>
 </html>

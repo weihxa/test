@@ -1,7 +1,7 @@
 from django.db import models
-
+from django.contrib import admin
 # Create your models here.
-
+'''
 class UserType(models.Model):
     display = models.CharField(max_length=50)
     def __unicode__(self):
@@ -44,3 +44,17 @@ class Reply(models.Model):
     create_date = models.DateTimeField(auto_now_add=True)
     def __unicode__(self):
         return self.content
+
+'''
+
+class BlogsPost(models.Model):
+    title = models.CharField(max_length=150)
+    body = models.TextField()
+    timestamp = models.DateTimeField(auto_now_add=True)
+    favor_count = models.IntegerField(default=0)
+    reply_count = models.IntegerField(default=0)
+    image_urls = models.ImageField(upload_to='/static/images')
+
+class BlogPostAdmin(admin.ModelAdmin):
+    list_display = ('title','timestamp')
+admin.site.register(BlogsPost,BlogPostAdmin)

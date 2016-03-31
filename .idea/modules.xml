@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/dj.iml" filepath="$PROJECT_DIR$/.idea/dj.iml" />
+      <module fileurl="file://D:/jumpserver/jumpserver/.idea/jumpserver.iml" filepath="D:/jumpserver/jumpserver/.idea/jumpserver.iml" />
+      <module fileurl="file://D:/untitled/.idea/untitled.iml" filepath="D:/untitled/.idea/untitled.iml" />
+    </modules>
+  </component>
+</project>

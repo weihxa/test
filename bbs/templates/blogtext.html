@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block titel %} 个人博客-正文{% endblock %}
+{% block style %}
+    <link href="/static/css/text.css" rel="stylesheet">
+{% endblock %}
+{% block bokezhengwen %}
+    <!-- banner代码 结束 -->
+    <div class="topnews_w">
+    <div class="blogs_w">
+    <h1 class="zhengwentel">正文：{{ blog_list.title }}</h1>
+    </div>
+    <p class="autor_w"><span class="lm_w f_l"><a href="/index/">个人博客</a></span><span class="dtime_w f_r">{{ blog_list.timestamp|date:"Y-m-d H:i:s" }}</span><span class="viewnum_w f_r"><a href='#' onclick="Favor(this,{{ blog_list.id }});">赞( {{ blog_list.favor_count }} )</a></span></p>
+      <h2><span></span></h2>
+        <div class="blogs_w">
+        <p>{{ blog_list.body }}</p>
+      </div>
+
+
+{% endblock %}
+
+
+
+
+{% block js %}
+    <script type="text/javascript">
+        function Favor(doc,id){
+            //点赞
+            $.ajax({
+                url:'/addfavor/',
+                data:{nid:id},
+                type:'POST',
+                success:function(callback){
+                    var obj = jQuery.parseJSON(callback);
+                    if(obj.status == 1){
+                        var temp ="赞"+"( "+ obj.data +" )"
+                        $(doc).text(temp)
+                    }
+                }
+            });
+        }
+    </script>
+{% endblock %}
