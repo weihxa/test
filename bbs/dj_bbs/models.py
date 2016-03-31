@@ -53,8 +53,21 @@ class BlogsPost(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True)
     favor_count = models.IntegerField(default=0)
     reply_count = models.IntegerField(default=0)
-    image_urls = models.ImageField(upload_to='/static/images')
+    image_urls = models.ImageField(upload_to='blog')
 
 class BlogPostAdmin(admin.ModelAdmin):
     list_display = ('title','timestamp')
 admin.site.register(BlogsPost,BlogPostAdmin)
+class News(models.Model):
+    title = models.CharField(max_length=30)
+    summary = models.CharField(max_length=256)
+    url = models.URLField()
+    favor_count = models.IntegerField(default=0)
+    reply_count = models.IntegerField(default=0)
+    create_date =  models.DateTimeField(auto_now_add=True)
+    image_urls = models.ImageField(upload_to='news')
+    def __unicode__(self):
+        return self.title
+class NewsAdmin(admin.ModelAdmin):
+    list_display = ('title','create_date')
+admin.site.register(News,NewsAdmin)

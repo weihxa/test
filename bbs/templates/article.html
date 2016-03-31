@@ -6,7 +6,7 @@
       <h2><span></span><b>全部</b>文章</h2>
       {% for post in blog_list %}
         <div class="blogs">
-        <figure><img src="{{ post.image_urls }}"></figure>
+        <figure><img src="/static/{{ post.image_urls }}"></figure>
         <ul>
           <h3><a href="/blogtext/{{ post.id }}">{{ post.title }}</a></h3>
           <p><span style="height:auto; font-weight:bold;font-size: 15px;">简述：</span>{{ post.body|slice:":300"|add:'...........'}}</p>

@@ -7,7 +7,8 @@ import json
 
 def index(request):
     blog_list = models.BlogsPost.objects.filter(favor_count__gt=10)[0:10]
-    return render_to_response('index.html',{'blog_list':blog_list})
+    new_list = models.News.objects.all()
+    return render_to_response('index.html',{'blog_list':blog_list,'new_list':new_list})
 
 def addfavor(request):
     ret = {'status':0,'data':'','message':''}
