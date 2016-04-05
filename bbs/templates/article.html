@@ -1,5 +1,28 @@
 {% extends 'base.html' %}
 {% block titel %} 个人博客-文章{% endblock %}
+{% block style %}
+<style>
+        #Pageing A{
+            background-color: #483C3C;
+            border:1px solid white;
+            text-decoration:none;color:white;
+            padding:.1em .6em .2em .6em;
+        }
+        #Pageing span{
+            background-color: #483C3C;
+            border:1px solid white;
+            text-decoration:none;color:white;
+            padding:.1em .6em .2em .6em;
+        }
+        #Pageing A.selected{
+            background-color: #8200FF;
+        }
+        .juzhong{
+            text-align:center;
+            margin: 16px;
+        }
+    </style>
+{% endblock %}
 {% block bokezhengwen %}
     <!-- banner代码 结束 -->
     <div class="topnews">
@@ -9,12 +32,17 @@
         <figure><img src="/static/{{ post.image_urls }}"></figure>
         <ul>
           <h3><a href="/blogtext/{{ post.id }}">{{ post.title }}</a></h3>
-          <p><span style="height:auto; font-weight:bold;font-size: 15px;">简述：</span>{{ post.body|slice:":300"|add:'...........'}}</p>
+          <p><span style="height:auto; font-weight:bold;font-size: 15px;">简述：</span>{{ post.body|striptags |slice:":300"|add:'...........'}}</p>
           <p class="autor"><span class="lm f_l"><a href="/index/">个人博客</a></span><span class="dtime f_l">{{ post.timestamp|date:"Y-m-d H:i:s" }}</span><span class="viewnum f_r"><a href='#' onclick="Favor(this,{{ post.id }});">赞( {{ post.favor_count }} )</a></span><span class="pingl f_r">评论（<a href="/">30</a>）</span></p>
         </ul>
       </div>
         {% endfor %}
 
+{% endblock %}
+{% block fenye %}
+    <div id="Pageing" class="juzhong">
+        {{ Paging }}
+    </div>
 {% endblock %}
 {% block js %}
     <script type="text/javascript">

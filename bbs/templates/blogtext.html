@@ -12,7 +12,7 @@
     <p class="autor_w"><span class="lm_w f_l"><a href="/index/">个人博客</a></span><span class="dtime_w f_r">{{ blog_list.timestamp|date:"Y-m-d H:i:s" }}</span><span class="viewnum_w f_r"><a href='#' onclick="Favor(this,{{ blog_list.id }});">赞( {{ blog_list.favor_count }} )</a></span></p>
       <h2><span></span></h2>
         <div class="blogs_w">
-        <p>{{ blog_list.body }}</p>
+        <p>{{ blog_list.body|safe  }}</p>
       </div>
 
 

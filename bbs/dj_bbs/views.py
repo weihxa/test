@@ -3,6 +3,9 @@ from django.shortcuts import render_to_response
 from django.shortcuts import HttpResponse
 from dj_bbs import models
 import json
+import comm
+from django.utils.safestring import mark_safe
+import html_fenye
 # Create your views here.
 
 def index(request):
@@ -23,9 +26,25 @@ def addfavor(request):
     except Exception,e:
         ret['message'] = e.message
     return HttpResponse(json.dumps(ret))
-def article(request):
-    blog_list = models.BlogsPost.objects.all()
-    return render_to_response('article.html',{'blog_list':blog_list})
+def article(request,page):
+    #blog_list = models.BlogsPost.objects.all()
+    #tianshu=comm.zhanint(request.COOKIES.get('pager_num',10),10)
+    disnum = 5
+    page=comm.zhuanint(page,1)
+    #result = models.BlogsPost.objects.all()[(int(page)-1)*tianshu:int(page)*tianshu]
+    blog_list = models.BlogsPost.objects.all()[(int(page)-1)*disnum:int(page)*disnum]
+    coun = models.BlogsPost.objects.all().count()
+    temp = divmod(coun,disnum)
+    if temp[1]==0:
+        allnum = temp[0]
+    else:
+        allnum=temp[0]+1
+    if page >allnum:
+        page=allnum
+        Paging=html_fenye.html_fenye(page,allnum)
+    else:
+        Paging=html_fenye.html_fenye(page,allnum)
+    return render_to_response('article.html',{'blog_list':blog_list,'Paging':Paging})
 
 def blogtext(request,page):
     blog_list = models.BlogsPost.objects.get(id=page)
