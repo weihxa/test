@@ -29,7 +29,7 @@
                       {
                   "id":"slide-img-{{ item.id }}", // 与slide-runner中的img标签id对应
                   "client":"标题：{{ item.title }}",
-                  "desc":"简介：{{ item.summary|slice:":30"|add:'......' }}" //这里修改描述
+                  "desc":"来源：{{ item.summary|slice:":30"}}" //这里修改描述
               },
               {% endfor %}
             ]
@@ -44,7 +44,7 @@
         <ul>
           <h3><a href="/blogtext/{{ post.id }}" >{{ post.title }}</a></h3>
           <p><span style="height:auto; font-weight:bold;font-size: 15px;">简述：</span>{{ post.body|slice:":300"|striptags|add:'...........'}}</p>
-          <p class="autor"><span class="lm f_l"><a href="/index/">个人博客</a></span><span class="dtime f_l">{{ post.timestamp|date:"Y-m-d H:i:s" }}</span><span class="viewnum f_r"><a href='#' onclick="Favor(this,{{ post.id }});">赞( {{ post.favor_count }} )</a></span><span class="pingl f_r">评论（<a href="/">30</a>）</span></p>
+          <p class="autor"><span class="lm f_l"><a href="/index/">个人博客</a></span><span class="dtime f_l">{{ post.timestamp|date:"Y-m-d H:i:s" }}</span><span class="viewnum f_r"><a href='#' onclick="Favor(this,{{ post.id }});">赞( {{ post.favor_count }} )</a></span><!--<span class="pingl f_r">评论（<a href="/blogtext/{{ post.id }}">30</a>）</span>--></p>
         </ul>
       </div>
         {% endfor %}
@@ -65,6 +65,14 @@
                     }
                 }
             });
+        }
+    </script>
+     <script language="javascript">
+        function ad_left(){
+        document.getElementById('ad_left').style.display="none";
+        }
+        function ad_right(){
+        document.getElementById('ad_right').style.display="none";
         }
     </script>
 {% endblock %}

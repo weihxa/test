@@ -59,7 +59,7 @@ class BlogPostAdmin(admin.ModelAdmin):
     list_display = ('title','timestamp')
 admin.site.register(BlogsPost,BlogPostAdmin)
 class News(models.Model):
-    title = models.CharField(max_length=30)
+    title = models.CharField(max_length=256)
     summary = models.CharField(max_length=256)
     url = models.URLField()
     favor_count = models.IntegerField(default=0)

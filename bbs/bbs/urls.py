@@ -13,4 +13,5 @@ urlpatterns = [
     url(r'^article/(\d*)', dj_bbs_views.article),
     url(r'^addfavor/', dj_bbs_views.addfavor),
     url(r'^blogtext/(\d*)', dj_bbs_views.blogtext),
+    url(r'^about/$', dj_bbs_views.About),
 ]

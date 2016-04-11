@@ -49,3 +49,6 @@ def article(request,page):
 def blogtext(request,page):
     blog_list = models.BlogsPost.objects.get(id=page)
     return render_to_response('blogtext.html',{'blog_list':blog_list})
+
+def About(request):
+    return render_to_response('about.html')
