@@ -33,7 +33,7 @@
         <ul>
           <h3><a href="/blogtext/{{ post.id }}">{{ post.title }}</a></h3>
           <p><span style="height:auto; font-weight:bold;font-size: 15px;">简述：</span>{{ post.body|striptags |slice:":300"|add:'...........'}}</p>
-          <p class="autor"><span class="lm f_l"><a href="/index/">个人博客</a></span><span class="dtime f_l">{{ post.timestamp|date:"Y-m-d H:i:s" }}</span><span class="viewnum f_r"><a href='#' onclick="Favor(this,{{ post.id }});">赞( {{ post.favor_count }} )</a></span><!--<span class="pingl f_r">评论（<a href="/">30</a>）</span>--></p>
+          <p class="autor"><span class="lm f_l"><a href="/index/">个人博客</a></span><span class="dtime f_l">{{ post.timestamp|date:"Y-m-d H:i:s" }}</span><span class="viewnum f_r"><a href='javascript:void(0);' onclick="Favor(this,{{ post.id }});">赞( {{ post.favor_count }} )</a></span><!--<span class="pingl f_r">评论（<a href="/">30</a>）</span>--></p>
         </ul>
       </div>
         {% endfor %}

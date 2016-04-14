@@ -9,7 +9,7 @@ import html_fenye
 # Create your views here.
 
 def index(request):
-    blog_list = models.BlogsPost.objects.filter(favor_count__gt=10)[0:10]
+    blog_list = models.BlogsPost.objects.filter(favor_count__gt=10).order_by("-favor_count")[0:10]
     new_list = models.News.objects.all()
     return render_to_response('index.html',{'blog_list':blog_list,'new_list':new_list})
 
