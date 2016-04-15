@@ -15,6 +15,7 @@ def timage(L1,L2):
         if (os.path.isdir(opfile)==False):
             os.mkdir(opfile)
         im = Image.open(files)
+        im = im.convert('RGB')
         w,h = im.size
         im_ss = im.resize((1000,280))
         #im_ss = im.convert('P')
